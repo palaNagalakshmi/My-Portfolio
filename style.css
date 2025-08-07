@@ -117,7 +117,7 @@ section {
   flex: 1;
   color: white;
   max-width: 600px;
-  order: 1; 
+  order: 1; /* Text content on left */
   margin-left: 10px;
 }
 
@@ -126,7 +126,7 @@ section {
   font-weight: bold;
   color: #00abf0;
   margin-bottom: 10px;
-  white-space: nowrap;  
+  white-space: nowrap;   /* Prevent line break */
   display: inline-block;
 }
 
@@ -153,10 +153,10 @@ section {
   justify-content: center;
   width: 50px;
   height: 50px;
-  border-radius: 60%;        
-  border: 2px solid #00e0ff;  
-  color: #00e0ff;            
-  font-size: 20px;           
+  border-radius: 50%;         /* makes it circular */
+  border: 2px solid #00e0ff;  /* border color */
+  color: #00e0ff;             /* icon color */
+  font-size: 20px;            /* icon size */
   margin: 0 10px;
   transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
   text-decoration: none;
@@ -164,7 +164,7 @@ section {
 
 .icons a:hover {
   background-color: #00e0ff;
-  color: #081b29;             
+  color: #081b29;             /* changes icon color on hover */
   transform: scale(1.3);
   box-shadow: 0 0 30px rgba(0, 224, 255, 0.7);
   transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), background-color 0.3s ease, color 0.3s ease;
@@ -172,7 +172,6 @@ section {
 .icons a:hover{
   color: var(--main-color);
 }
-
 .flex-btn .btn {
   margin: 2rem;
   color: var(--text-color);
@@ -185,7 +184,6 @@ section {
   align-items: left;
 }
 
-
 .flex-btn .btn:hover {
   background-color: #00e0ff;
   color: #081b29;
@@ -193,13 +191,12 @@ section {
 .flext-btn:hover{
   color: var(--main-color);
 }
-
 .home-image {
   flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
-  order: 2; 
+  order: 2; /* Image on right */
   margin-left: 150px;
   margin-top: 50px;
 }
@@ -386,14 +383,7 @@ section {
   background: #021627;
   border-radius: 10px;
 }
-/* About Section */
-.about-section {
-  background-color: #07182c;
-  padding: 50px 5%;
-  color: white;
-  text-align: center;
-}
-about-section h2{
+.about-section h2{
   font-size:  40px;
 }
 .about-image {
@@ -413,7 +403,6 @@ about-section h2{
 .about-image img:hover {
   transform: scale(1.05); /* zoom effect */
 }
-
 .about-content {
   flex: 1;
   min-width: 450px;
@@ -428,12 +417,18 @@ about-section h2{
 .about-content:hover {
   transform: scale(1.05); /* zoom effect */
 }
+.about-section {
+  background-color: #07182c;
+  padding: 50px 5%;
+  color: white;
+  text-align: center;
+}
+
 @media (max-width: 768px) {
   .about-container {
     flex-direction: column;
     align-items: center;
   }
-
   .about-image, .about-content {
     max-width: 90%;
   }
@@ -653,6 +648,130 @@ a:hover {
 }
 
 
+/* Internship Section */
+/* Internship Section */
+/*.internship {
+  min-height: 100vh;
+  background-color: var(--bg-color);
+  padding: 5rem 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.internship .heading {
+  color: var(--text-color);
+  font-size: 4.1rem;
+  text-align: left;
+  margin-bottom: 2rem;
+  text-decoration-color: var(--main-color);
+}
+
+.internship .box-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  width: 100%;
+}
+
+.internship .box-container .box {
+  background-color: var(--main-color);
+  width: 40rem;
+  min-height: 330px;
+  padding: 2rem;
+  border-radius: 3rem;
+  border: 0.2rem solid var(--main-color);
+  transition: 0.5s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center; /* Center contents horizontally */
+  /*text-align: center; /* Center text */
+  /*box-sizing: border-box;
+  position: relative;
+}
+
+.internship .box-container .box img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  margin-bottom: 1rem;
+}
+
+.intern-icon {
+  font-size: 3rem;
+  color: white;
+  padding: 0.5rem;
+  border-radius: 50%;
+  width: fit-content;
+  margin-bottom: 1rem;
+}
+
+.internship .box-container .box h3 {
+  font-size: 1.9rem;
+  color: var(--text-color);
+  margin-bottom: 0.5rem;
+  text-align-last:center;
+}
+
+.internship .box-container .box h4 {
+  font-size: 1.4rem;
+  color: var(--text-color);
+  margin-bottom: 1rem;
+  font-weight: normal;
+  text-align:left;
+}
+
+.internship .box-container .box p {
+  font-size: 1.5rem;
+  color: var(--text-color);
+  line-height: 1.8;
+  text-align: left; /* Description paragraph left-aligned */
+  /*width: 100%;
+}
+
+.internship .box-container .box:hover {
+  background-color: var(--unq-color);
+  box-shadow: 0.1rem 0.5rem 1rem var(--main-color);
+  transform: scale(1.05);
+}
+
+.internship .box-container .box:hover h3,
+.internship .box-container .box:hover h4,
+.internship .box-container .box:hover p {
+  color: var(--bg-color);
+}
+
+/* Link Buttons */
+/*.intern-links {
+  margin-top: 1.5rem;
+  font-size: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.intern-links a {
+  color: #07182c;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  background-color: white;
+  border-radius: 1rem;
+  transition: all 0.3s ease-in-out;
+  border: 1px solid white;
+}
+
+.intern-links a:hover {
+  color: var(--unq-color);
+  background-color: var(--text-color);
+  border-color: var(--unq-color);
+}
+
+/* About Section */
+
 
 /* skills */
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
@@ -664,10 +783,9 @@ body {
 
 .section-title {
   text-align: center;
-  font-size: 28px;
+  font-size: 40px;
   color: white;
   margin-bottom: 30px;
-  text-decoration: underline;
 }
 
 .skill-container {
@@ -1060,7 +1178,6 @@ margin: 2rem 1rem;
     box-shadow: 0 0 30px rgba(0, 224, 255, 0.9);
     transition: transform 0.4s ease;
   }
-
 
 
 }
